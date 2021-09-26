@@ -51,7 +51,7 @@ while True:
                 faces_detected = face_haar_cascade.detectMultiScale(gray_img, 1.2, 4)
                 for (x,y,w,h) in faces_detected:
                     cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),thickness=7)
-                    roi_gray=gray_img[y:y+w,x:x+h]#cropping region of interest i.e. face area from  image
+                    roi_gray=gray_img[y:y+w,x:x+h]
                     roi_gray=cv2.resize(roi_gray,(48,48))
                     img_pixels = image.img_to_array(roi_gray)
                     img_pixels = np.expand_dims(img_pixels, axis = 0)
